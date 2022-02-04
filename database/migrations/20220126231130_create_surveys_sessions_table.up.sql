@@ -1,0 +1,10 @@
+CREATE TABLE IF NOT EXISTS surveys_sessions (
+    id BIGINT UNSIGNED AUTO_INCREMENT NOT NULL,
+    survey_id BIGINT UNSIGNED NOT NULL,
+    hash VARCHAR(255),
+    step_index INT DEFAULT 0 NOT NULL,
+    created_at DATETIME DEFAULT NULL,
+    updated_at DATETIME DEFAULT NULL,
+    deleted_at DATETIME DEFAULT NULL,
+    PRIMARY KEY(id)
+);

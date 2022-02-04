@@ -1,0 +1,25 @@
+version: '3'
+services:
+
+  app:
+    build: ./docker/app/
+    command: >
+      bash -c "
+          dockerize -wait tcp://mysql:3306 -timeout 60s &&
+          source ~/.profile &&
+          gin run main.go
+      "
+    ports:
+      - 3000:3000
+    volumes:
+      - .:/var/www/html
+
+  mysql:
+    build: ./docker/mysql/
+    ports:
+      - 33060:3306
+    environment:
+      MYSQL_DATABASE: boilerplate
+      MYSQL_USER: boilerplate
+      MYSQL_PASSWORD: secret
+      MYSQL_ROOT_PASSWORD: secret
