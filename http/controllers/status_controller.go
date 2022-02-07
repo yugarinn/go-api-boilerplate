@@ -6,5 +6,5 @@ import (
 )
 
 func GetStatus(context *gin.Context) {
-	context.JSON(http.StatusOK, "OK")
+	context.Status(http.StatusOK)
 }

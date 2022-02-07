@@ -6,5 +6,5 @@ import (
 )
 
 func GetUsers(context *gin.Context) {
-	context.JSON(http.StatusOK, "OK")
+	context.JSON(http.StatusOK, []byte("OK"))
 }
