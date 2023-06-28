@@ -1,0 +1,11 @@
+version: '3'
+services:
+  mysql:
+    build: ./docker/mysql/
+    ports:
+      - 33060:3306
+    environment:
+      MYSQL_DATABASE: boilerplate
+      MYSQL_USER: boilerplate
+      MYSQL_PASSWORD: secret
+      MYSQL_ROOT_PASSWORD: secret

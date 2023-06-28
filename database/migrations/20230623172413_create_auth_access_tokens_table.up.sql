@@ -1,0 +1,14 @@
+CREATE TABLE IF NOT EXISTS auth_access_tokens (
+    id BIGINT UNSIGNED AUTO_INCREMENT NOT NULL,
+    user_id BIGINT UNSIGNED DEFAULT NULL,
+    validation_id BIGINT UNSIGNED DEFAULT NULL,
+    token TEXT NOT NULL,
+
+    expires_at DATETIME DEFAULT NULL,
+
+    created_at DATETIME DEFAULT NULL,
+    updated_at DATETIME DEFAULT NULL,
+    deleted_at DATETIME DEFAULT NULL,
+
+    PRIMARY KEY(id)
+);
